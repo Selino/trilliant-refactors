@@ -1,6 +1,7 @@
 import React from "react"
 import moment from "moment"
 import Dinero from "dinero.js"
+import { Bar, BarChart, XAxis, YAxis } from "recharts"
 
 export default function ExecSummaryItem(props) {
   const myBudget = Dinero({
@@ -32,3 +33,9 @@ export default function ExecSummaryItem(props) {
     </tr>
   )
 }
+
+// <BarChart width={100} height={30} data={data}>
+// <XAxis dataKey='name' hide />
+// <YAxis hide />
+// <Bar dataKey='pv' fill='#82ca9d' />
+// </BarChart>
