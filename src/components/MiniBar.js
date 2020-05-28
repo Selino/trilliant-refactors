@@ -2,20 +2,25 @@ import React from "react"
 
 export default function MiniBar(props) {
   const myBarBackGround = {
-    backgroundColor: "#C9E5B3",
-    width: "80px",
-    height: "20px",
+    backgroundColor: props.backGroundColor,
+    width: "60px",
+    height: "16px",
     borderRadius: "2px",
     overflow: "hidden",
+    display: "inline-block",
+    marginLeft: ".5rem",
+    verticalAlign: "text-bottom",
   }
   const myBarForGround = {
-    backgroundColor: "#80B956",
+    backgroundColor: props.forGroundColor,
     width: props.Perc + "%",
     height: "100%",
   }
   return (
-    <div style={myBarBackGround}>
-      <div style={myBarForGround}></div>
-    </div>
+    <>
+      <div style={myBarBackGround}>
+        <div style={myBarForGround}></div>
+      </div>
+    </>
   )
 }
