@@ -118,7 +118,7 @@ export default function ExecutiveSummary() {
     },
     {
       dataField: "daysInMarket",
-      text: "% Days In Market",
+      text: "Days In Market",
       sort: true,
       style: { whiteSpace: "nowrap" },
       formatter: daysInMarketFormatter,
@@ -148,7 +148,6 @@ export default function ExecutiveSummary() {
         <div>
           <div className='search-container'>
             <div className='table-name-container'>Strategy List</div>
-
             <div className='searchbar-container'>
               <SearchBar {...props.searchProps} />
             </div>

@@ -17,6 +17,7 @@ table {
 
 .table-name-container {
   display: inline-block;
+  height: 1.5rem;
   max-width: 200px;
   margin-right: 1rem;
   padding-right: 1rem;
