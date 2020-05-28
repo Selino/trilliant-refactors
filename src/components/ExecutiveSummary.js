@@ -2,11 +2,13 @@ import React from "react"
 import { getSampleData } from "../fixtures/ExecutiveSummaryData"
 import { Badge } from "react-bootstrap"
 import BootstrapTable from "react-bootstrap-table-next"
+import ToolkitProvider, { Search } from "react-bootstrap-table2-toolkit"
 import filterFactory, { textFilter } from "react-bootstrap-table2-filter"
-import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css"
 import MiniBar from "../components/MiniBar"
 import moment from "moment"
 import Dinero from "dinero.js"
+import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css"
+import "react-bootstrap-table2-toolkit/dist/react-bootstrap-table2-toolkit.min.css"
 
 const myData = getSampleData()
 
@@ -14,7 +16,7 @@ export default function ExecutiveSummary() {
   const daysInMarketFormatter = (cell, row) => {
     const myPerc = (cell / row.totalDaysInMarket) * 100
     return (
-      <>
+      <div>
         {cell}
         <MiniBar
           Perc={Math.round(myPerc)}
@@ -22,20 +24,20 @@ export default function ExecutiveSummary() {
           backGroundColor='#E5E5E5'
           forGroundColor='#428BCA'
         />
-      </>
+      </div>
     )
   }
 
   const displayDate = (cell) => {
     const date = moment(cell).format("MM/DD/YYYY").toString()
-    return <>{date}</>
+    return <div>{date}</div>
   }
 
   const displaySpend = (cell, row) => {
     const spend = Dinero({ amount: cell, precision: 5 }).toRoundedUnit(1)
     const myPerc = (cell / row.budget) * 100
     return (
-      <>
+      <div>
         ${spend}k
         <MiniBar
           Perc={Math.round(myPerc)}
@@ -43,18 +45,18 @@ export default function ExecutiveSummary() {
           backGroundColor='#E5E5E5'
           forGroundColor='#4C9D2F'
         />
-      </>
+      </div>
     )
   }
 
   const displayBudget = (cell) => {
     const budget = Dinero({ amount: cell }).toFormat("$0,0")
-    return <>{budget}</>
+    return <div>{budget}</div>
   }
 
   const displayCpl = (cell) => {
     const cpl = Dinero({ amount: cell }).toFormat("$0,0.00")
-    return <>{cpl}</>
+    return <div>{cpl}</div>
   }
 
   const displayStatus = (status) => {
@@ -70,6 +72,8 @@ export default function ExecutiveSummary() {
       </div>
     )
   }
+
+  const { SearchBar } = Search
 
   const columns = [
     {
@@ -134,19 +138,27 @@ export default function ExecutiveSummary() {
     },
   ]
   return (
-    <>
-      <BootstrapTable
-        bootstrap4={true}
-        bordered={false}
-        striped={false}
-        hover={true}
-        keyField='id'
-        condensed={false}
-        headerClasses='table-header'
-        data={myData}
-        columns={columns}
-        filter={filterFactory()}
-      />
-    </>
+    <ToolkitProvider
+      keyField='id'
+      data={myData}
+      columns={columns}
+      bootstrap4={true}
+      search
+    >
+      {(props) => (
+        <div>
+          <SearchBar {...props.searchProps} />
+          <BootstrapTable
+            {...props.baseProps}
+            bordered={false}
+            striped={false}
+            hover={true}
+            condensed={false}
+            headerClasses='table-header'
+            filter={filterFactory()}
+          />
+        </div>
+      )}
+    </ToolkitProvider>
   )
 }
