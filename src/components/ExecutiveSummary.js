@@ -3,7 +3,6 @@ import { getSampleData } from "../fixtures/ExecutiveSummaryData"
 import { Badge } from "react-bootstrap"
 import BootstrapTable from "react-bootstrap-table-next"
 import ToolkitProvider, { Search } from "react-bootstrap-table2-toolkit"
-import filterFactory, { textFilter } from "react-bootstrap-table2-filter"
 import MiniBar from "../components/MiniBar"
 import moment from "moment"
 import Dinero from "dinero.js"
@@ -147,7 +146,14 @@ export default function ExecutiveSummary() {
     >
       {(props) => (
         <div>
-          <SearchBar {...props.searchProps} />
+          <div className='search-container'>
+            <div className='table-name-container'>Strategy List</div>
+
+            <div className='searchbar-container'>
+              <SearchBar {...props.searchProps} />
+            </div>
+          </div>
+
           <BootstrapTable
             {...props.baseProps}
             bordered={false}
@@ -155,7 +161,6 @@ export default function ExecutiveSummary() {
             hover={true}
             condensed={false}
             headerClasses='table-header'
-            filter={filterFactory()}
           />
         </div>
       )}
