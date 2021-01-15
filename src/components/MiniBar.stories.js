@@ -7,17 +7,13 @@ export default {
   component: MiniBar,
 }
 
-const Template = () => (
-  <MiniBar
-    Perc='68'
-    daysInMarket='100'
-    backGroundColor='#E5E5E5'
-    forGroundColor='#428BCA'
-  />
-)
+const Template = (args) => <MiniBar {...args} />
 
 export const FirstStory = Template.bind({})
 
 FirstStory.args = {
-  /* the args you need here will depend on your component */
+  Perc: "68",
+  daysInMarket: "100",
+  backGroundColor: "#E5E5E5",
+  forGroundColor: "#428BCA",
 }
