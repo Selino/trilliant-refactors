@@ -1,0 +1,21 @@
+{
+    "plugins": [
+        {
+            "name": "@zeplin/cli-connect-react-plugin"
+        }
+    ],
+    "projects": [
+        "6000ecb1716d632632c970b4"
+    ],
+    "styleguides": [
+        "6000fb31ca221f9e8c4faa96"
+    ],
+    "components": [
+        {
+            "path": "src/components/MiniBar.js",
+            "zeplinNames": [
+                "graph micro bar primary"
+            ]
+        }
+    ]
+}
