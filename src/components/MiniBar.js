@@ -1,8 +1,8 @@
 import React from "react"
 
 /**
-- Use an avatar for attributing actions or content to specific users.
-- The user's name should always be present when using Avatar – either printed beside the avatar or in a tooltip.
+- Aliquam sed nibh nisi. Ut aliquet, lectus et feugiat aliquam, felis justo lobortis diam, non volutpat ante ligula id sapien. Mauris a molestie lacus, eu egestas felis.
+- Nullam iaculis est nec justo tempus iaculis. Aliquam erat volutpat. Interdum et malesuada fames ac ante ipsum primis in faucibus.
 **/
 
 export default function MiniBar(props) {
