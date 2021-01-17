@@ -33,9 +33,3 @@ export default function ExecSummaryItem(props) {
     </tr>
   )
 }
-
-// <BarChart width={100} height={30} data={data}>
-// <XAxis dataKey='name' hide />
-// <YAxis hide />
-// <Bar dataKey='pv' fill='#82ca9d' />
-// </BarChart>

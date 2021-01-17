@@ -5,6 +5,9 @@ import MiniBar from "./MiniBar"
 export default {
   title: "MiniBar",
   component: MiniBar,
+  parameters: {
+    componentSubtitle: "Lorem ipsum dolar sit amet",
+  },
 }
 
 const Template = (args) => <MiniBar {...args} />

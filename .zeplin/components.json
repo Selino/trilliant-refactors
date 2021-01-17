@@ -4,9 +4,7 @@
             "name": "@zeplin/cli-connect-react-plugin"
         }
     ],
-    "projects": [
-        "6000ecb1716d632632c970b4"
-    ],
+    "projects": [],
     "styleguides": [
         "6000fb31ca221f9e8c4faa96"
     ],
@@ -16,6 +14,11 @@
             "zeplinNames": [
                 "graph micro bar primary"
             ]
-        }
+        },
+        {
+            "path": "src/components/ExecutiveSummary.js",
+            "zeplinNames": []
+        },
+
     ]
 }
