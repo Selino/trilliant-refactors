@@ -1,8 +1,7 @@
 import React from "react"
 
 /**
-- Aliquam sed nibh nisi. Ut aliquet, lectus et feugiat aliquam, felis justo lobortis diam, non volutpat ante ligula id sapien. Mauris a molestie lacus, eu egestas felis.
-- Nullam iaculis est nec justo tempus iaculis. Aliquam erat volutpat. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+An inline bar chart that accepts the Perc property to calculate the visualized metric.
 **/
 
 export default function MiniBar(props) {
